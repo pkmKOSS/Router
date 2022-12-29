@@ -10,7 +10,7 @@ import UIKit
 /// Основной роутер.
 class BaseRouter: NSObject {
 
-    // MARK: - Public Properties
+    // MARK: - Visual Properties
 
     var controller: UIViewController
 

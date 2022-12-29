@@ -17,10 +17,10 @@ final class LoginViewController: UIViewController {
         static let fakeLoginName = "111"
     }
 
-    // MARK: - visual components
+    // MARK: - private IBOutlets
 
-    @IBOutlet var loginTextView: UITextField!
-    @IBOutlet var passwordTextView: UITextField!
+    @IBOutlet private var loginTextView: UITextField!
+    @IBOutlet private var passwordTextView: UITextField!
     
     // MARK: - Public Properties
     
@@ -35,23 +35,23 @@ final class LoginViewController: UIViewController {
     
     // MARK: IBAction Methods
     
-    @IBAction func loginButtonAction(_ sender: Any) {
+    @IBAction private func loginButtonAction(_ sender: Any) {
         guard
             loginTextView.text == Constants.fakeLoginName,
             passwordTextView.text == Constants.fakePasswordName
         else {
-            router?.showToRecover()
+            router?.routToRecover()
             return
         }
-        router?.showToWelcome()
+        router?.routToWelcome()
     }
     
-    @IBAction func registerButtonAction(_ sender: Any) {
-        router?.showToRegister()
+    @IBAction private func registerButtonAction(_ sender: Any) {
+        router?.routToRegister()
     }
 
-    @IBAction func recoverButtonAction(_ sender: Any) {
-        router?.showToRecover()
+    @IBAction private func recoverButtonAction(_ sender: Any) {
+        router?.routToRecover()
     }
 }
 

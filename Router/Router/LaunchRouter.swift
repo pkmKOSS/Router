@@ -7,8 +7,17 @@
 
 import UIKit
 
-/// Launch router
-class LaunchRouter: BaseRouter {
+/// Роутер экрана логин.
+final class LaunchRouter: BaseRouter {
+
+    // MARK: - Private constants
+
+    private enum Constants {
+        static let goWellcomeMethodName = "goWellcome"
+        static let goRegisterMethodName = "goRegister"
+        static let goRecoverMethodName = "goRecover"
+    }
+
     // MARK: - Initialisers
 
     init(viewController: UIViewController) {
@@ -17,15 +26,15 @@ class LaunchRouter: BaseRouter {
 
     // MARK: - Public Methods
 
-    func showToWelcome() {
+    func routToWelcome() {
         perform(segue: "goWellcome")
     }
 
-    func showToRegister() {
+    func routToRegister() {
         perform(segue: "goRegister")
     }
 
-    func showToRecover() {
+    func routToRecover() {
         perform(segue: "goRecover")
     }
 }

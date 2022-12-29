@@ -7,11 +7,19 @@
 
 import UIKit
 
-class RecoverViewController: UIViewController {
+/// Экран восстановления пароля.
+final class RecoverViewController: UIViewController {
+
+    // MARK: - Init
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        dismissScreen()
+    }
 
+    // MARK: - Private method
+
+    private func dismissScreen() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let self else { return }
             self.dismiss(animated: true)
